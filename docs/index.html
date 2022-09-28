@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>AssignmentViewer</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap">
+    <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.css" />
+    <link type="text/css" rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/atom-one-dark.min.css">
+    <link type="text/css" rel="stylesheet" href="resources/css/style.css">
+
+</head>
+
+<body>
+    <div class="app-information">
+        Diese Seite zeigt die aktuellen Aufgabenbeschreibungen zum <a href="https://elearning.uni-regensburg.de/course/view.php?id=52262">OOP-Kurs</a> im Wintersemester 2021/22 an. Der Kurs wird vom <a href="https://www.uni-regensburg.de/sprache-literatur-kultur/medieninformatik/aktuelles/index.html">Lehrstuhl für Medieninformatik</a> an der <a href="https://www.uni-regensburg.de/">Uni Regensburg</a> angeboten.
+    </div>
+    <div class="assignment-container">
+        <span class="sidebar-left">
+        </span>
+    </div>
+    <div class="toc-link">Inhalt</div>
+    <!-- Template for element showing assignments meta data and properties -->
+    <template id="properties-element-template">
+        <span class="properties">
+            <h2 class="title"></h2>
+            <span class="author"></span>
+            <span class="edit"></span>
+            <span class="abstract"></span>
+            <span class="button download-pdf">Handout drucken (z.B. als PDF)</span>
+            <h3>Downloads</h3>
+            <span class="links"></span>
+        </span>
+    </template>
+    <!-- Template for table of contents for assignment -->
+    <template id="toc-element-template">
+        <span class="toc">
+            <h3 class="toc-header">Inhalt</h3>
+            <ol class="toc-list"></ol>
+        </span>
+    </template>
+    <!-- Template for link collection in sidebar -->
+    <template id="support-element-template">
+        <span class="support">
+        <h3 class="support-header">Support</h3>
+        <ul>
+            <li><a href="https://elearning.uni-regensburg.de/course/view.php?id=52262" target="_blank">Aktueller GRIPS-Kurs</a></li>
+            <li><a href="https://discord.gg/vWmShUREP2">Aktueller Discord-Server</a></li>
+            <li><a href="https://elearning.uni-regensburg.de/pluginfile.php/3294193/mod_folder/content/0/OOP-WS-2021-IntelliJ-zuhause-und-im-CIP-Pool.pdf?forcedownload=1" target="_blank">Hinweise zur Verwendung von IntelliJ</a></li>
+            <li><a href="https://elearning.uni-regensburg.de/mod/book/view.php?id=1946278" target="_blank">Hilfestellungen zu Bouncer</a></li>
+            <li><a href="https://oop-regensburg.github.io/GraphicsApp-Reborn-Library/html/index.html" target="_blank">Dokumentation der GraphicsApp</a></li>
+        </ul>
+        </span>
+   </template>
+    <!-- Template for assignments main content -->
+    <template id="content-element-template">
+        <span class="content" data-simplebar></span>
+    </template>
+</body>
+
+<script type="application/javascript" src="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.js"></script>
+<script type="application/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.1/showdown.min.js"></script>
+<script type="application/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js "></script>
+<script type="application/javascript" src="resources/js/bundle.js "></script>
+
+</html>

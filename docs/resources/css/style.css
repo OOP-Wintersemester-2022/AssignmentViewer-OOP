@@ -1,0 +1,272 @@
+:root {
+    --Background: #282C34;
+    --CurrentLine: #5c6370;
+    --Foreground: #f8f8f2;
+    --Comment: #ABB2BF;
+    --Cyan: #56B6C2;
+    --Green: #98C379;
+    --Orange: #FC7C15;
+    --Pink: #61AFEF;
+    --Purple: #C678DD;
+    --Red: #E06275;
+    --Yellow: #E5C07B;
+}
+
+.hidden {
+    display: none;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    overflow: hidden;
+    background-color: var(--Background);
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+.toc-link {
+    display: none;
+    position: fixed;
+    bottom: 5%;
+    right: 0;
+    padding: 2.5%;
+    border-radius: 10% 0 0 10%;
+    background-color: var(--Purple);
+    color: var(--Foreground);
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+.app-information {
+    padding: 0.5em;
+    background-color: var(--Purple);
+    color: var(--Background);
+}
+
+.app-information a {
+    color: var(--Yellow);
+}
+
+.assignment-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.assignment-container a {
+    color: var(--Purple);
+}
+
+.assignment-container .icon {
+    border-radius: 50%;
+    padding: 0.1em;
+    background-color: var(--Purple);
+    color: var(--Background);
+}
+
+.assignment-container .sidebar-left {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 20%;
+    align-self: flex-start;
+    padding: 1em;
+    color: var(--Foreground);
+}
+
+.assignment-container .properties .title {
+    margin-bottom: 0.5em;
+    color: var(--Green);
+}
+
+.assignment-container .properties .author {}
+
+.assignment-container .properties .edit {
+    margin-bottom: 0.5em;
+}
+
+.assignment-container .properties .abstract {
+    line-height: 1.1em;
+}
+
+.assignment-container .properties .button {
+    display: block;
+    margin: 1vh auto;
+    padding: 2%;
+    border-radius: 5px;
+    background-color: var(--Purple);
+    color: var(--Background);
+}
+
+.assignment-container .properties .button:hover {
+    cursor: pointer;
+    opacity: 0.9;
+}
+
+.assignment-container .content {
+    height: 90vh;
+    flex-basis: 75%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    scrollbar-color: var(--Purple) var(--Background);
+    scrollbar-width: thin;
+    margin: 1% 0 2.5% 0;
+    color: var(--Foreground);
+}
+
+.assignment-container .content::-webkit-scrollbar-track {
+    background-color: var(--Purple) !important;
+}
+
+.assignment-container .content video {
+    display: block;
+    margin: 0 auto;
+    width: 60%;
+    height: auto;
+    border-style: solid;
+    border-color: var(--Purple);
+    object-fit: scale-down;
+}
+
+.assignment-container .content img {
+    display: block;
+    max-height: 500px;
+    margin: 0 auto;
+}
+
+.assignment-container .content .image-label {
+    margin-top: 0;
+    text-align: center;
+    font-size: 0.9em;
+    color: var(--Purple);
+}
+
+.assignment-container .content table {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.assignment-container .content table tbody:before {
+    content: "-";
+    display: block;
+    line-height: 2vh;
+    text-indent: -99999px;
+}
+
+.assignment-container .links {
+    display: flex;
+    flex-direction: column;
+}
+
+.assignment-container .links a {
+    color: var(--Purple);
+}
+
+.assignment-container .links .hint {
+    display: inline-block;
+    margin-left: 0.25em;
+    font-size: 0.75em;
+    color: var(--Foreground);
+}
+
+.assignment-container .toc {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
+.assignment-container .toc .entry {
+    cursor: pointer;
+    text-decoration: underline;
+    color: var(--Purple);
+}
+
+.assignment-container .toc .entry:hover {
+    cursor: pointer;
+}
+
+
+/* Make content readable on mobile devices */
+
+@media only screen and (max-width: 768px) {
+    body {
+        overflow: auto;
+    }
+    .app-information {}
+    .assignment-container {
+        flex-direction: column;
+    }
+    .assignment-container .content {
+        margin: 2.5%;
+    }
+    .assignment-container .content video {
+        width: 90%;
+    }
+    .assignment-container .content img {
+        display: block;
+        width: 100%;
+        margin: 0 auto;
+    }
+    .assignment-container .content table th {
+        display: none;
+    }
+    .assignment-container .content table td {
+        display: block;
+    }
+    .assignment-container .properties .button {
+        display: none;
+    }
+    .toc-link {
+        display: block;
+    }
+}
+
+@media print {
+    .app-information,
+    .sidebar-left,
+    .toc-link {
+        display: none !important;
+    }
+    body {
+        display: block !important;
+        background-color: #fff;
+        color: #000;
+        overflow: visible !important;
+        height: 100% !important;
+        font-size: 12pt !important;
+    }
+    h1 {
+        font-size: 24pt !important;
+    }
+    h2 {
+        font-size: 18pt !important;
+    }
+    h3 {
+        font-size: 16pt !important;
+    }
+    .assignment-container {
+        display: block;
+        font-size: 14pt !important;
+    }
+    .assignment-container .content {
+        display: block !important;
+        overflow: visible !important;
+        height: 100% !important;
+        flex-basis: 100% !important;
+        font-size: 14pt !important;
+        line-height: 21pt !important;
+        color: #000 !important;
+    }
+    .assignment-container .content p {
+        font-size: 14pt !important;
+        line-height: 21pt !important;
+    }
+    .assignment-container .content .image-label {
+        color: #000 !important;
+        font-size: 12pt !important;
+    }
+    .assignment-container .content p:not(.image-label) {
+        text-align: justify !important;
+    }
+}

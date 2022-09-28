@@ -1,0 +1,20 @@
+{
+    "name": "android-assignment-viewer",
+    "version": "0.0.1",
+    "description": "Online viewer for assignments in our Android class",
+    "directories": {
+        "doc": "docs"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "nodemon index.js"
+    },
+    "author": "Alexander Bazo <alexander.bazo@ur.de>",
+    "license": "MIT",
+    "devDependencies": {
+        "express": "^4.17.1",
+        "nodemon": "^2.0.7",
+        "webpack": "^5.27.2",
+        "webpack-cli": "^4.5.0"
+    }
+}

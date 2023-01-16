@@ -17,11 +17,11 @@ function getParameterFromHash() {
     }
 }
 
-async function loadAssignment() {
+function loadAssignment() {
     try {
         let parameter = getParameterFromHash(),
             task = new FetchAssignmentTask(parameter.organization, parameter.repository),
-            assignment = await task.run();
+            assignment = task.run();
         AssignmentViewer.render(assignment);
     } catch (error) {
         // Show error message
